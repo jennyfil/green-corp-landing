@@ -4,6 +4,8 @@ body {
     color: #213053;
 }
 
+/*----- Header -----*/
+
 header {
     padding: 20px;
     display: flex;
@@ -37,6 +39,8 @@ button {
     cursor: pointer;
     box-shadow: 0 16px 36px rgb(52 213 68 / 22%);
 }
+
+/*----- About -----*/
 
 .about {
     display: flex;
@@ -80,4 +84,36 @@ button {
 
 .about__image {
     width: 500px;
+}
+
+/*----- Form -----*/
+.form {
+    display: flex;
+    padding-top: 115px;
+    padding-bottom: 115px;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #1D263A;
+    color: #fff;
+    text-align: center;
+}
+
+.form h1 {
+    font-size: 48px;
+}
+
+.form p {
+    font-size: 18px;
+    opacity: 0.65;
+}
+
+.form__container {
+    width: 550px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
