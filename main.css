@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
@@ -5,12 +6,15 @@ body {
 }
 
 /*----- Header -----*/
-
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #fff;
 }
 
 header a {
@@ -41,6 +45,10 @@ button {
 }
 
 /*----- About -----*/
+@keyframes appearance {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
 
 .about {
     display: flex;
@@ -75,11 +83,21 @@ button {
 
 .about__info {
     max-width: 550px;
+    animation: appearance 2s 1;
+}
+
+@keyframes rotation {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
 }
 
 .about__sun-image {
+    position: absolute;
     width: 100px;
     height: 100px;
+    animation: rotation 10s linear infinite;
+    animation: appearance 2s 1;
+
 }
 
 .about__image {
@@ -127,7 +145,7 @@ button {
 .form label{
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form input,
@@ -138,6 +156,7 @@ button {
     padding: 0px 20px;
     border-radius: 15px;
     border: none;
+    outline: none;
 }
 
 .form__submit {
@@ -148,27 +167,28 @@ button {
 
 select {
     appearance: none;
-    outline: none;
-    transition: background-color 0.3s ease-in;
 }
 
 select:hover {
     background-color: #f6980c;
     box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
-}
-
-input {
-    outline: none;
     transition: background-color 0.3s ease-in;
 }
+
 
 input:hover {
     background-color: #f6980c;
     box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
+    transition: background-color 0.3s ease-in;
 }
 
-/*----- Footer -----*/
+button:hover {
+    background-color: #f6980c;
+    box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
+    transition: background-color 0.3s ease-in;
+ }
 
+/*----- Footer -----*/
 footer {
     padding: 90px 20px;
     font-size: 16px;
@@ -190,7 +210,7 @@ footer {
     margin-right: 80px;
 }
 
-.footer__group h3 {
+footer h3 {
     font-size: 16px;
     opacity: 0.7;
     margin-bottom: 30px;
@@ -203,4 +223,64 @@ footer {
 
 .footer__links a {
     margin-bottom: 15px;
+}
+
+
+@media (max-width: 1024px) {
+    .about {
+        padding: 115px 20px;
+    }
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+    .about__image {
+        width: 280px;
+    }
+}
+
+@media (max-width: 720px) {
+    header {
+        padding: 10px;
+    }
+    header a {
+        margin-right: 10px;
+    }
+    .header__logo {
+        height: 20px;
+    }
+    
+    .about {
+        padding: 50px 10px;
+        flex-direction: column-reverse;
+    }
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+    .about__image {
+        width: 280px;
+    }
+
+    .form {
+        padding: 50px 10px;
+    }
+    .form h1{
+        font-size: 36px;
+    }
+    
+    footer {
+        padding: 50px 10px;
+    }
+    .footer__container {
+        flex-direction: column;
+    }
 }
