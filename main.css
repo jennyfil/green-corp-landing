@@ -50,7 +50,9 @@ button {
     100% {opacity: 1;}
 }
 
+
 .about {
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -103,6 +105,15 @@ button {
 .about__image {
     width: 500px;
 }
+
+.orb-canvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+
 
 /*----- Features -----*/
 .features {
